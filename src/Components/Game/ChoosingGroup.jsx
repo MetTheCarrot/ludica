@@ -2,8 +2,7 @@ import sillas from "../../assets/sillas.png";
 import {useEffect} from "react";
 import {endChoosingGroup, updateRound} from "../../Data/Game.js";
 
-export default function ChoosingGroup({groups, game, refreshGame}){
-
+export default function ChoosingGroup({ groups, game, refreshGame, refresh }){
   useEffect(() => {
 
     console.log("Elegir grupo")
@@ -59,6 +58,7 @@ export default function ChoosingGroup({groups, game, refreshGame}){
   }, []);
 
   function endChoose(){
+    refreshGame()
     let grupoAleatorio = Math.floor(Math.random() * groups.length);
     while (grupoYaEstaElegido(grupoAleatorio)){
       grupoAleatorio = Math.floor(Math.random() * groups.length);
@@ -68,8 +68,7 @@ export default function ChoosingGroup({groups, game, refreshGame}){
     document.getElementById(grupoAleatorio).classList.add('Choose');
     endChoosingGroup(grupoAleatorio);
     refreshGame();
-    refreshGame();
-    refreshGame();
+    refresh();
   }
 
   function grupoYaEstaElegido(id){
