@@ -1,9 +1,9 @@
 import {Button, ButtonGroup, Container} from "react-bootstrap";
 import ShowGroups from "./ShowGroups.jsx";
 import {addNewGroup, getGroupList, removeGroup} from "../Data/Groups.js";
-import {getStatusGame, startGame} from "../Data/Game.js";
+import {startGame} from "../Data/Game.js";
 
-export default function LoadingGame({groups, setGroups, setStatusGame}){
+export default function LoadingGame({groups, setGroups, refreshGame}){
 
   function addGroup(){
     addNewGroup();
@@ -17,7 +17,7 @@ export default function LoadingGame({groups, setGroups, setStatusGame}){
 
   function initGame(){
     startGame(groups);
-    setStatusGame(getStatusGame());
+    refreshGame();
   }
 
   return(

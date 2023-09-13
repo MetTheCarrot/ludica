@@ -2,3 +2,15 @@ img{
     width: 80px;
     user-select: none;
 }
+
+.notChoose{
+    border: 5px solid #ff0000;
+}
+
+.Choose{
+    border: 5px solid #00ff00;
+}
+
+.alreadyChoose{
+    border: 5px solid #262c2c;
+}
