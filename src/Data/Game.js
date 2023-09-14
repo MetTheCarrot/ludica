@@ -13,7 +13,6 @@ function getDefaultGame(){
         6: Mostrar ganador
        */
       choosingGroup: -1, // -1 significa que ningun grupo ha sido elegido
-      questionSelected: -1, // -1 significa que ninguna pregunta ha sido elegida
     },
     round: 0,
   }
@@ -35,7 +34,7 @@ function startGame(currentGroups){
     game.round = 0;
   } else {
     game.start = true;
-/*    game.groups = currentGroups;*/
+    game.groups = currentGroups;
     game.round = 1;
     game.status.event = 1;
   }
@@ -43,12 +42,13 @@ function startGame(currentGroups){
 }
 
 function nextRound(currentGroups){
-  if (game.round === maxRounds) {
+  if (game.round >= maxRounds) {
     endGame();
     return;
   }
   game.round = game.round + 1;
   game.groups = currentGroups;
+  game.status.event = 1;
   localStorage.setItem('game', JSON.stringify(game));
 }
 
@@ -57,18 +57,8 @@ function pauseGame(){
   localStorage.setItem('game', JSON.stringify(game));
 }
 
-function resumeGame(){
-  game.pause = false;
-  localStorage.setItem('game', JSON.stringify(game));
-}
-
 function endGame(){
-  game.end = true;
-  localStorage.setItem('game', JSON.stringify(game));
-}
-
-function resetGame(){
-  game = getDefaultGame();
+  game.event = 3;
   localStorage.setItem('game', JSON.stringify(game));
 }
 
@@ -82,25 +72,20 @@ function endChoosingGroup(grupoElegido){
   localStorage.setItem('game', JSON.stringify(game));
 }
 
-function updateRound(currentGroups){
-  game.round = game.round + 1;
-  game.status.choosingGroup = -1;
-  game.status.questionSelected = -1;
+function endChoosingQuestion(){
   game.status.event = 1;
-  game.groups = currentGroups;
+  game.status.choosingGroup = -1;
   localStorage.setItem('game', JSON.stringify(game));
 }
 
 export {
-  updateRound,
+  endChoosingQuestion,
   endChoosingGroup,
   getStatusGame,
   startGame,
   nextRound,
   pauseGame,
-  resumeGame,
   endGame,
-  resetGame,
   game,
   maxRounds,
 }

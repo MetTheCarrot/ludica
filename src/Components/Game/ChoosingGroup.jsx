@@ -1,19 +1,22 @@
 import sillas from "../../assets/sillas.png";
 import {useEffect} from "react";
-import {endChoosingGroup, updateRound} from "../../Data/Game.js";
+import {endChoosingGroup, maxRounds, nextRound} from "../../Data/Game.js";
+import {Container} from "react-bootstrap";
 
 export default function ChoosingGroup({ groups, game, refreshGame, refresh }){
+
   useEffect(() => {
-
-    console.log("Elegir grupo")
-    console.log(game.groups)
-
+    console.log(game)
     if(game.groups.length === 0){
       // Si no hay grupos, aumenta la ronda.
       console.log("No hay grupos, aumentar ronda")
-      updateRound(groups);
+      nextRound(groups);
       refreshGame();
     }
+
+  }, [game]);
+
+  useEffect(() => {
 
     if(game.groups.length === 1){
       // Si solo hay un grupo, se elige ese grupo
@@ -22,7 +25,6 @@ export default function ChoosingGroup({ groups, game, refreshGame, refresh }){
       refreshGame();
       return;
     }
-
     let grupoActual = 0;
     const recorrerGrupos =
     setInterval(() => {
@@ -32,7 +34,6 @@ export default function ChoosingGroup({ groups, game, refreshGame, refresh }){
         else
           grupoActual++;
       }
-      console.log("Grupo actual: " + grupoActual)
       document.querySelectorAll('.Choose').forEach((element) => {
         element.classList.remove('Choose');
         element.classList.add('notChoose');
@@ -54,7 +55,7 @@ export default function ChoosingGroup({ groups, game, refreshGame, refresh }){
       });
       // Elegir grupo aleatorio
       endChoose();
-    }, 10000) // Al pasar 10 segundos se detiene el intervalo
+    }, 6000) // Al pasar 6 segundos se detiene el intervalo
   }, []);
 
   function endChoose(){
@@ -81,28 +82,39 @@ export default function ChoosingGroup({ groups, game, refreshGame, refresh }){
 
   function allGroups({groups}){
     return(
-      <div
-        className='d-flex justify-content-center p-3'
-      >
-        {
-          groups.map((group, index) => (
-            grupoYaEstaElegido(group.id) ?
-            <section key={index} className='p-3 alreadyChoose'>
-              <img src={sillas} alt='silla'/>
-              <h5>
-                {group.points} puntos
-              </h5>
-            </section>
-              :
-            <section key={index} className='p-3 notChoose' id={group.id}>
-              <img src={sillas} alt='silla'/>
-              <h5>
-                {group.points} puntos
-              </h5>
-            </section>
-          ))
-        }
-      </div>
+      <Container>
+        <h1>
+          Eligiendo grupo - Ronda {game.round}/{maxRounds}
+        </h1>
+        <div
+          className='d-flex justify-content-center p-3'
+        >
+          {
+            groups.map((group, index) => (
+              grupoYaEstaElegido(group.id) ?
+              <section key={index} className='p-3 alreadyChoose'>
+                <h5>
+                  Grupo {group.id}
+                </h5>
+                <img src={sillas} alt='silla'/>
+                <h5>
+                  {group.points} puntos
+                </h5>
+              </section>
+                :
+              <section key={index} className='p-3 notChoose' id={group.id}>
+                <h5>
+                  Grupo {group.id}
+                </h5>
+                <img src={sillas} alt='silla'/>
+                <h5>
+                  {group.points} puntos
+                </h5>
+              </section>
+            ))
+          }
+        </div>
+      </Container>
     )
   }
 

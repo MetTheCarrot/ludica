@@ -19,7 +19,19 @@ function removeGroup(){
   localStorage.setItem('groups', JSON.stringify(groupList));
 }
 
+function removePoint(targetGroupId, amount){
+  groupList[targetGroupId - 1].points -= amount;
+  localStorage.setItem('groups', JSON.stringify(groupList));
+}
+
+function addPoint(targetGroupId, amount){
+  groupList[targetGroupId - 1].points += amount;
+  localStorage.setItem('groups', JSON.stringify(groupList));
+}
+
 export {
+  removePoint,
+  addPoint,
   removeGroup,
   addNewGroup,
   groupList,

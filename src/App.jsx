@@ -9,18 +9,13 @@ import {questions} from "./Data/Questions.js";
 function App() {
 
   const [groups, setGroups] = useState(groupList);
-  const [game, setStatusGame] = useState(initGame);
+  const [game, ] = useState(initGame);
   const [update, refresh] = useState(false);
   const [preguntas,] = useState(questions);
 
   function refreshGame(){
     refresh(!update);
   }
-
-  useEffect(() => {
-    game.start = false;
-    pauseGame();
-  }, [game]);
 
   return (
     <Container className='text-center'>

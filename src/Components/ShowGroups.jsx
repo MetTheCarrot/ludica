@@ -10,6 +10,9 @@ export default function ShowGroups({groups}){
         groups.length > 0 ?
           groups.map((group, index) => (
             <section key={index} className='p-3'>
+              <h5>
+                Grupo {group.id}
+              </h5>
               <img src={sillas} alt='silla'/>
               <h5>
                 {group.points} puntos

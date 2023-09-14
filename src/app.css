@@ -1,6 +1,10 @@
+
 img{
     width: 80px;
     user-select: none;
+    /* Mini jumping */
+    animation-name: __bounceInUp;
+
 }
 
 .notChoose{
@@ -13,4 +17,24 @@ img{
 
 .alreadyChoose{
     border: 5px solid #262c2c;
+}
+
+.cardQuestion{
+    cursor: pointer;
+}
+
+.cardQuestion:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+    background-color: gold!important;
+}
+
+.correctAnswer{
+    background-color: #00ff00!important;
+    color: white;
+}
+
+.incorrectAnswer{
+    background-color: #ff0000!important;
+    color: white;
 }
