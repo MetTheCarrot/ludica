@@ -16,6 +16,8 @@ function App() {
   function refreshGame(){
     refresh(!update);
   }
+  console.log("Preguntas")
+  console.log(preguntas)
 
   return (
     <Container className='text-center'>

@@ -5,7 +5,7 @@ import {addPoint, removePoint} from "../../Data/Groups.js";
 import confetti from 'canvas-confetti'
 import {endChoosingQuestion} from "../../Data/Game.js";
 
-export default function ChoosingAnswer({currentGroup, quest, refresh}){
+export default function ChoosingAnswer({currentGroup, quest, refresh, setEvent}){
 
   const [pregunta, setPregunta] = useState(quest);
   const [showSpanishQuestion, setShowSpanishQuestion] = useState(false);
@@ -35,6 +35,8 @@ export default function ChoosingAnswer({currentGroup, quest, refresh}){
       confetti().then(() => {
         console.log("Cambiando a escoger otro grupo")
         endChoosingQuestion();
+        refresh();
+        setEvent(1);
         // Elige siguiente grupo
       })
     } else {
@@ -44,6 +46,7 @@ export default function ChoosingAnswer({currentGroup, quest, refresh}){
         console.log("Cambiando a escoger otro grupo")
         endChoosingQuestion();
         refresh();
+        setEvent(1);
         // Elige siguiente grupo
       }, 4000) // Al pasar 2 segundos se detiene el intervalo
     }
@@ -90,13 +93,24 @@ export default function ChoosingAnswer({currentGroup, quest, refresh}){
   function cambiarPregunta(){
     setPregunta(getRandomQuest());
     setChangeQuestion(true);
+    if(removeTwoAnswers){
+      document.getElementById(0).style.visibility = 'visible';
+      document.getElementById(1).style.visibility = 'visible';
+      document.getElementById(2).style.visibility = 'visible';
+      document.getElementById(3).style.visibility = 'visible';
+      eliminarDosRespuestas(true)
+    }
     removePoint(currentGroup.id, 3);
     document.getElementById(currentGroup.id + "grupo").innerHTML = "Tienen " + currentGroup.points + " puntos";
     refresh();
   }
 
-  function eliminarDosRespuestas(){
-    removePoint(currentGroup.id, 2);
+  function eliminarDosRespuestas(byPassByChangingQuestion = false){
+    console.log(byPassByChangingQuestion)
+    if(byPassByChangingQuestion === false){
+      console.log(`Eliminando dos respuestas del grupo ${currentGroup.id}`)
+      removePoint(currentGroup.id, 2);
+    }
     setRemoveTwoAnswers(true);
     // Obtener el indice de la respuesta correcta
     const correctAnswer = pregunta.respuestas_en.findIndex((respuesta) => respuesta.correcta);
@@ -154,7 +168,7 @@ export default function ChoosingAnswer({currentGroup, quest, refresh}){
                 className='shadow border'
               >
                 <Button variant="primary"
-                        onClick={eliminarDosRespuestas}
+                        onClick={() => eliminarDosRespuestas(false)}
                         disabled={removeTwoAnswers}
                 >
                   <div>

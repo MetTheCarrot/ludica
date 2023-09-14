@@ -3,7 +3,7 @@ import {useEffect} from "react";
 import {endChoosingGroup, maxRounds, nextRound} from "../../Data/Game.js";
 import {Container} from "react-bootstrap";
 
-export default function ChoosingGroup({ groups, game, refreshGame, refresh }){
+export default function ChoosingGroup({ groups, game, refreshGame, refresh, setEvent }){
 
   useEffect(() => {
     console.log(game)
@@ -13,15 +13,20 @@ export default function ChoosingGroup({ groups, game, refreshGame, refresh }){
       nextRound(groups);
       refreshGame();
     }
-
   }, [game]);
 
   useEffect(() => {
+    if(game.round >= maxRounds){
+      console.log("Maxima rondas logradas")
+      setEvent(3)
+      return;
+    }
 
     if(game.groups.length === 1){
       // Si solo hay un grupo, se elige ese grupo
       console.log("Solo hay un grupo, elegir ese grupo")
       endChoosingGroup(game.groups[0].id);
+      setEvent(2)
       refreshGame();
       return;
     }
@@ -68,6 +73,7 @@ export default function ChoosingGroup({ groups, game, refreshGame, refresh }){
     document.getElementById(grupoAleatorio).classList.remove('notChoose');
     document.getElementById(grupoAleatorio).classList.add('Choose');
     endChoosingGroup(grupoAleatorio);
+    setEvent(2)
     refreshGame();
     refresh();
   }

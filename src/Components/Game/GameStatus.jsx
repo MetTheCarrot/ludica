@@ -7,20 +7,23 @@ import ShowResults from "./ShowResults.jsx";
 export default function GameStatus({game, groups, refreshGame, preguntas}){
 
   const [updateStatus, refreshStatus] = useState(false);
+  const [event, setEvent] = useState(game.status.event);
 
   function refresh(){
     refreshStatus(!updateStatus);
   }
-  console.log(game.status.event)
+  console.log(event)
 
   function showStatus() {
-    switch (game.status.event) {
+    switch (event) {
       case 1:
         return (<ChoosingGroup availableQuestions={preguntas} game={game} groups={groups} refreshGame={refreshGame}
+                               setEvent={setEvent}
                                refresh={refresh}/>);
       case 2:
         return (<ChoosingAnswer
           refresh={refresh}
+          setEvent={setEvent}
           quest={getRandomQuest()}
           currentGroup={groups.find((group) => group.id === game.status.choosingGroup)
         }/>);

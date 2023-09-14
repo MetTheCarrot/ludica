@@ -21,6 +21,7 @@ function removeGroup(){
 
 function removePoint(targetGroupId, amount){
   groupList[targetGroupId - 1].points -= amount;
+  console.log(`groupList[targetGroupId - 1].points: ${groupList[targetGroupId - 1].points}`)
   localStorage.setItem('groups', JSON.stringify(groupList));
 }
 
