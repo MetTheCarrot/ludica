@@ -5,7 +5,7 @@ import {addPoint, removePoint, updateGroups} from "../../Data/Groups.js";
 import confetti from 'canvas-confetti'
 import {endChoosingQuestion} from "../../Data/Game.js";
 
-export default function ChoosingAnswer({currentGroup, quest, refresh, setEvent, setGroups}){
+export default function ChoosingAnswer({groups, currentGroup, quest, refresh, setEvent, setGroups}){
 
   const [pregunta, setPregunta] = useState(quest);
   const [showSpanishQuestion, setShowSpanishQuestion] = useState(false);
@@ -31,7 +31,14 @@ export default function ChoosingAnswer({currentGroup, quest, refresh, setEvent, 
       respuestaCuadadrado.innerHTML = "¡Respuesta correcta! (+6 puntos)";
       respuestaCuadadrado.style.color = 'green';
       addPoint(currentGroup.id, 6);
-      setGroups(updateGroups());
+      setGroups(
+        groups.map((group) => {
+          if(group.id === currentGroup.id){
+            group.points += 6;
+          }
+          return group;
+        })
+      )
       document.getElementById(currentGroup.id + "grupo").innerHTML = "Tienen " + currentGroup.points + " puntos";
       confetti().then(() => {
         console.log("Cambiando a escoger otro grupo")
@@ -80,7 +87,14 @@ export default function ChoosingAnswer({currentGroup, quest, refresh, setEvent, 
   function mostrarPreguntaEnEspanol(){
     setShowSpanishQuestion(true);
     removePoint(currentGroup.id, 3);
-    setGroups(updateGroups());
+    setGroups(
+      groups.map((group) => {
+        if(group.id === currentGroup.id){
+          group.points -= 3;
+        }
+        return group;
+      })
+    )
     document.getElementById(currentGroup.id + "grupo").innerHTML = "Tienen " + currentGroup.points + " puntos";
     refresh();
   }
@@ -88,7 +102,14 @@ export default function ChoosingAnswer({currentGroup, quest, refresh, setEvent, 
   function mostrarRespuestasEnEspanol(){
     setShowSpanishRespuestas(true);
     removePoint(currentGroup.id, 2);
-    setGroups(updateGroups());
+    setGroups(
+      groups.map((group) => {
+        if(group.id === currentGroup.id){
+          group.points -= 2;
+        }
+        return group;
+      })
+    )
     document.getElementById(currentGroup.id + "grupo").innerHTML = "Tienen " + currentGroup.points + " puntos";
     refresh();
   }
@@ -104,7 +125,14 @@ export default function ChoosingAnswer({currentGroup, quest, refresh, setEvent, 
       eliminarDosRespuestas(true)
     }
     removePoint(currentGroup.id, 3);
-    setGroups(updateGroups());
+    setGroups(
+      groups.map((group) => {
+        if(group.id === currentGroup.id){
+          group.points -= 3;
+        }
+        return group;
+      })
+    )
     document.getElementById(currentGroup.id + "grupo").innerHTML = "Tienen " + currentGroup.points + " puntos";
     refresh();
   }
@@ -114,7 +142,14 @@ export default function ChoosingAnswer({currentGroup, quest, refresh, setEvent, 
     if(byPassByChangingQuestion === false){
       console.log(`Eliminando dos respuestas del grupo ${currentGroup.id}`)
       removePoint(currentGroup.id, 2);
-      setGroups(updateGroups());
+      setGroups(
+        groups.map((group) => {
+          if(group.id === currentGroup.id){
+            group.points -= 2;
+          }
+          return group;
+        })
+      )
     }
     setRemoveTwoAnswers(true);
     // Obtener el indice de la respuesta correcta
@@ -144,7 +179,7 @@ export default function ChoosingAnswer({currentGroup, quest, refresh, setEvent, 
       }}>
 
         <h1>
-          Grupo {currentGroup.id} elija una respuesta
+          Grupo {currentGroup.id}, elija una respuesta
         </h1>
         <h1
           id={currentGroup.id + "grupo"}
@@ -221,7 +256,7 @@ export default function ChoosingAnswer({currentGroup, quest, refresh, setEvent, 
 
           <div className='col'>
             <section className='d-flex bg-dark justify-content-center p-2 align-self-end'>
-              <h4 className="p-2 bg-white rounded m-1 cardQuestion"
+              <h4 className="p-2 bg-white text-center rounded m-1 cardQuestion"
                 id='0'
                   onClick={() => checkAnswer(0)}
               >
@@ -229,7 +264,7 @@ export default function ChoosingAnswer({currentGroup, quest, refresh, setEvent, 
                   mostrarRespuestas(0)
                 }
               </h4>
-              <h4 className="p-2 bg-white rounded m-1 cardQuestion"
+              <h4 className="p-2 bg-white text-center rounded m-1 cardQuestion"
                 id="1"
                   onClick={() => checkAnswer(1)}
               >

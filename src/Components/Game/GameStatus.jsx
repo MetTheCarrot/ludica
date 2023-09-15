@@ -22,6 +22,7 @@ export default function GameStatus({game, groups, refreshGame, preguntas, setGro
                                refresh={refresh}/>);
       case 2:
         return (<ChoosingAnswer
+          groups={groups}
           setGroups={setGroups}
           refresh={refresh}
           setEvent={setEvent}

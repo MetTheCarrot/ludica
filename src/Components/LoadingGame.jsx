@@ -25,10 +25,10 @@ export default function LoadingGame({groups, setGroups, refreshGame}){
 
       <ShowGroups groups={groups} />
 
-
       <section
         className='d-flex justify-content-center'
       >
+
         <ButtonGroup
           className='shadow border '
         >

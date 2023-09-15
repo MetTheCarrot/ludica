@@ -780,7 +780,7 @@ export const listOfQuest = [
   },
   {
     correcta: false,
-    texto: ' Escoger un regalo de cumpleaños para un amigo.'
+    texto: 'Escoger un regalo de cumpleaños para un amigo.'
   }
 ]
 },
