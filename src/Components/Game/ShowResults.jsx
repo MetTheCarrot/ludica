@@ -74,7 +74,7 @@ export default function ShowResults({groups}){
             groups.map((group, index) => (
               <section key={index} className={getClassName(group.id)}>
                 <h5>
-                  Grupo {group.id}
+                  Fila {group.id}
                 </h5>
                 <img src={sillas} alt='silla'/>
                 <h5>

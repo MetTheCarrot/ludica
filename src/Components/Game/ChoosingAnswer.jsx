@@ -1,7 +1,7 @@
 import {Button, ButtonGroup, Container} from "react-bootstrap";
-import {getRandomQuest} from "../../Data/Questions.js";
+import {getRandomQuest, skipQuestion} from "../../Data/Questions.js";
 import {useState} from "react";
-import {addPoint, removePoint, updateGroups} from "../../Data/Groups.js";
+import {addPoint, removePoint} from "../../Data/Groups.js";
 import confetti from 'canvas-confetti'
 import {endChoosingQuestion} from "../../Data/Game.js";
 
@@ -43,6 +43,7 @@ export default function ChoosingAnswer({groups, currentGroup, quest, refresh, se
       confetti().then(() => {
         console.log("Cambiando a escoger otro grupo")
         endChoosingQuestion();
+        skipQuestion(pregunta);
         refresh();
         setEvent(1);
         // Elige siguiente grupo
@@ -179,7 +180,7 @@ export default function ChoosingAnswer({groups, currentGroup, quest, refresh, se
       }}>
 
         <h1>
-          Grupo {currentGroup.id}, elija una respuesta
+          Fila {currentGroup.id}, elija una respuesta
         </h1>
         <h1
           id={currentGroup.id + "grupo"}
@@ -259,7 +260,7 @@ export default function ChoosingAnswer({groups, currentGroup, quest, refresh, se
               <h4 className="p-2 bg-white text-center rounded m-1 cardQuestion"
                 id='0'
                   onClick={() => checkAnswer(0)}
-              >
+              >A. &nbsp;
                 {
                   mostrarRespuestas(0)
                 }
@@ -267,7 +268,7 @@ export default function ChoosingAnswer({groups, currentGroup, quest, refresh, se
               <h4 className="p-2 bg-white text-center rounded m-1 cardQuestion"
                 id="1"
                   onClick={() => checkAnswer(1)}
-              >
+              >B. &nbsp;
                 {
                   mostrarRespuestas(1)
                 }
@@ -275,7 +276,7 @@ export default function ChoosingAnswer({groups, currentGroup, quest, refresh, se
               <h4 className="p-2 bg-white rounded m-1 cardQuestion"
                 id='2'
                   onClick={() => checkAnswer(2)}
-              >
+              >C. &nbsp;
                 {
                   mostrarRespuestas(2)
                 }
@@ -283,7 +284,7 @@ export default function ChoosingAnswer({groups, currentGroup, quest, refresh, se
               <h4 className="p-2 bg-white rounded m-1 cardQuestion"
                 id='3'
                   onClick={() => checkAnswer(3)}
-              >
+              >D. &nbsp;
                 {
                   mostrarRespuestas(3)
                 }

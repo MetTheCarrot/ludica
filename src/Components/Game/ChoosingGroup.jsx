@@ -102,7 +102,7 @@ export default function ChoosingGroup({ groups, game, refreshGame, refresh, setE
     return(
       <Container>
         <h1>
-          Eligiendo grupo - Ronda {game.round}/{maxRounds}
+          Eligiendo fila - Ronda {game.round}/{maxRounds}
         </h1>
         <div
           className='d-flex justify-content-center p-3'
@@ -112,7 +112,7 @@ export default function ChoosingGroup({ groups, game, refreshGame, refresh, setE
               grupoYaEstaElegido(group.id) ?
               <section key={index} className='p-3 alreadyChoose'>
                 <h5>
-                  Grupo {group.id}
+                  Fila {group.id}
                 </h5>
                 <img src={sillas} alt='silla'/>
                 <h5>
@@ -122,7 +122,7 @@ export default function ChoosingGroup({ groups, game, refreshGame, refresh, setE
                 :
               <section key={index} className='p-3 notChoose' id={group.id}>
                 <h5>
-                  Grupo {group.id}
+                  Fila {group.id}
                 </h5>
                 <img src={sillas} alt='silla'/>
                 <h5>

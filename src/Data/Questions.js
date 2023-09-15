@@ -7,12 +7,24 @@ function getQuestions(){
 let questions = getQuestions();
 
 function getRandomQuest(){
-  const randomize = Math.floor(Math.random() * questions.length);
-  // TODO: Añadir removedor de preguntas contestadas
+  let randomize = Math.floor(Math.random() * questions.length);
+  while(questions[randomize].respondida === true){
+    randomize = Math.floor(Math.random() * questions.length);
+  }
   return questions[randomize];
 }
 
+function skipQuestion(question){
+  //find index
+  let id = questions.findIndex((item) => item === question);
+  //change respondida to true
+  questions[id].respondida = true;
+  //update questions
+  localStorage.setItem('questions', JSON.stringify(questions));
+}
+
 export {
+  skipQuestion,
   questions,
   getRandomQuest
 }

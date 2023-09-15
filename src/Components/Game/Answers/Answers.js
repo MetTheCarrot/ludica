@@ -24,11 +24,11 @@ export const listOfQuest = [
     respuestas_es: [
       {
         correcta: false,
-        texto: 'Porque el hombre es una sustancia cerrada'
+        texto: 'Porque el hombre es una sustancia cerrada.'
       },
       {
         correcta: false,
-        texto: 'Porque Aristóteles afirmó que el hombre es un animal político'
+        texto: 'Porque Aristóteles afirmó que el hombre es un animal político.'
       },
       {
         correcta: true,
@@ -36,7 +36,7 @@ export const listOfQuest = [
       },
       {
         correcta: false,
-        texto: 'Porque el hombre carece de apertura'
+        texto: 'Porque el hombre carece de apertura.'
       }
     ]
   },
@@ -58,7 +58,7 @@ export const listOfQuest = [
   },
   {
     correcta: false,
-    texto: 'he significance of entities is fixed and does not depend on the human perspective. '
+    texto: 'The significance of entities is fixed and does not depend on the human perspective. '
   }
 ],
   pregunta_es: '¿Cuál es la relación entre la apertura humana y la significación de los entes?',
@@ -102,7 +102,7 @@ export const listOfQuest = [
     texto: 'Finding criteria to differentiate historical ethos is not related to the configuration of worlds'
   }
 ],
-  pregunta_es: ' ¿Cuál es la relación entre el ethos y la configuración del mundo según la información proporcionada?',
+  pregunta_es: '¿Cuál es la relación entre el ethos y la configuración del mundo según la información proporcionada?',
   respuestas_es: [
   {
     correcta: false,
@@ -110,7 +110,7 @@ export const listOfQuest = [
   },
   {
     correcta: false,
-    texto: ' La apropiación y configuración del mundo no son aspectos centrales del ethos'
+    texto: 'La apropiación y configuración del mundo no son aspectos centrales del ethos'
   },
   {
     correcta: true,
@@ -155,11 +155,11 @@ export const listOfQuest = [
   },
   {
     correcta: false,
-    texto: ' Significa que el hombre no puede cambiar su mundo una vez que lo ha configurado.'
+    texto: 'Significa que el hombre no puede cambiar su mundo una vez que lo ha configurado.'
   },
   {
     correcta: false,
-    texto: ' Significa que el hombre necesita tener una relación significativa con su entorno  para ser considerado verdaderamente humano.'
+    texto: 'Significa que el hombre necesita tener una relación significativa con su entorno  para ser considerado verdaderamente humano.'
   }
 ]
 },
@@ -370,7 +370,7 @@ export const listOfQuest = [
 },
   {
   respondida: false,
-    pregunta_en: 'What is the universalist component of the concept of citizenship according to Will Kymlicka and Wayne Norman?',
+    pregunta_en: 'What is the universal list component of the concept of citizenship according to Will Kymlicka and Wayne Norman?',
   respuestas_en: [
   {
     correcta: false,
@@ -389,7 +389,7 @@ export const listOfQuest = [
     texto: 'Individual rights'
   }
 ],
-  pregunta_es: ' ¿Cuál es el componente universalista del concepto de ciudadanía según Will Kymlicka y Wayne Norman?',
+  pregunta_es: '¿Cuál es el componente universalista del concepto de ciudadanía según Will Kymlicka y Wayne Norman?',
   respuestas_es: [
   {
     correcta: false,
@@ -621,7 +621,7 @@ export const listOfQuest = [
 },
 {
   respondida: false,
-    pregunta_en: 'hat is one of the differences between citizenship understood from a political perspective and an ethical perspective?',
+    pregunta_en: 'Hat is one of the differences between citizenship understood from a political perspective and an ethical perspective?',
   respuestas_en: [
   {
     correcta: false,
@@ -663,7 +663,7 @@ export const listOfQuest = [
 },
   {
     respondida: false,
-    pregunta_en: '¿Which of the following statements best describes a moral dilemma in ethics?',
+    pregunta_en: 'Which of the following statements best describes a moral dilemma in ethics?',
     respuestas_en: [
       {
         correcta: false,
@@ -704,7 +704,7 @@ export const listOfQuest = [
   },
 {
   respondida: false,
-    pregunta_en: '¿What characterizes a moral dilemma?',
+    pregunta_en: 'What characterizes a moral dilemma?',
   respuestas_en: [
   {
     correcta: false,
@@ -745,7 +745,7 @@ export const listOfQuest = [
 },
 {
   respondida: false,
-    pregunta_en: '¿What is an example of a common moral dilemma in professional ethics?',
+    pregunta_en: 'What is an example of a common moral dilemma in professional ethics?',
   respuestas_en: [
   {
     correcta: false,
@@ -828,7 +828,7 @@ export const listOfQuest = [
 
 {
   respondida: false,
-    pregunta_en: '¿What is the importance of empathy in addressing moral dilemmas?',
+    pregunta_en: 'What is the importance of empathy in addressing moral dilemmas?',
   respuestas_en: [
   {
     correcta: true,
@@ -870,7 +870,7 @@ export const listOfQuest = [
 
 {
   respondida: false,
-    pregunta_en: '¿What is a key difference between a moral dilemma and a common ethical conflict?',
+    pregunta_en: 'What is a key difference between a moral dilemma and a common ethical conflict?',
   respuestas_en: [
   {
     correcta: false,
@@ -911,7 +911,7 @@ export const listOfQuest = [
 },
   {
     respondida: false,
-    pregunta_en: '¿Which of the following statements is false about appropriation?',
+    pregunta_en: 'Which of the following statements is false about appropriation?',
     respuestas_en: [
       {
         correcta: false,
@@ -950,11 +950,9 @@ export const listOfQuest = [
       }
     ]
   },
-
-
   {
     respondida: false,
-    pregunta_en: '¿What is the significance about ownership?',
+    pregunta_en: 'What is the significance about ownership?',
     respuestas_en: [
       {
         correcta: true,
@@ -995,7 +993,7 @@ export const listOfQuest = [
   },
   {
     respondida: false,
-    pregunta_en: '¿What is Appropriation for Max Weber?',
+    pregunta_en: 'What is Appropriation for Max Weber?',
     respuestas_en: [
       {
         correcta: true,
@@ -1077,7 +1075,7 @@ export const listOfQuest = [
   },
   {
     respondida: false,
-    pregunta_en: '¿What is the importance of inductive thinking in decision making?',
+    pregunta_en: 'What is the importance of inductive thinking in decision making?',
     respuestas_en: [
       {
         correcta: false,
@@ -1118,7 +1116,7 @@ export const listOfQuest = [
   },
   {
     respondida: false,
-    pregunta_en: '¿What is analytical thinking?',
+    pregunta_en: 'What is analytical thinking?',
     respuestas_en: [
       {
         correcta: true,
@@ -1157,4 +1155,339 @@ export const listOfQuest = [
       }
     ]
   },
+  {
+    "respondida": false,
+
+    "pregunta_es": "¿Cuál es una responsabilidad del ciudadano en una democracia?",
+
+    "respuestas_es": [
+
+      {
+        "correcta": false,
+        "texto": "Acumular riqueza"
+      },
+      {
+        "correcta": true,
+        "texto": "Participar en la política pública"
+      },
+      {
+        "correcta": false,
+        "texto": "Pagar impuestos"
+      },
+      {
+        "correcta": false,
+        "texto": "Obedecer ciegamente al gobierno"
+      }
+    ],
+
+    "pregunta_en": "What is a responsibility of the citizen in a democracy?",
+
+    "respuestas_en": [
+
+      {
+        "correcta": false,
+        "texto": "Accumulate wealth"
+      },
+      {
+        "correcta": true,
+        "texto": "Participate in public policy"
+      },
+      {
+        "correcta": false,
+        "texto": "Pay taxes"
+      },
+      {
+        "correcta": false,
+        "texto": "Blindly obey the government"
+      }
+    ]
+  },
+
+  {
+    "respondida": false,
+
+    "pregunta_es": "¿Qué tipo de pensamiento se caracteriza por integrar ideas propias y ajenas?",
+
+    "respuestas_es": [
+
+      {
+        "correcta": false,
+        "texto": "Pensamiento débil"
+      },
+      {
+        "correcta": true,
+        "texto": "Pensamiento apropiativo"
+      },
+      {
+        "correcta": false,
+        "texto": "Pensamiento abstracto"
+      },
+      {
+        "correcta": false,
+        "texto": "Pensamiento dogmático"
+      }
+    ],
+
+    "pregunta_en": "What kind of thinking is characterized by integrating one's own and others' ideas?",
+
+    "respuestas_en": [
+
+      {
+        "correcta": false,
+        "texto": "Weak thinking"
+      },
+      {
+        "correcta": true,
+        "texto": "Appropriative thinking"
+      },
+      {
+        "correcta": false,
+        "texto": "Abstract thinking"
+      },
+      {
+        "correcta": false,
+        "texto": "Dogmatic thinking"
+      }
+    ]
+  },
+
+  {
+    "respondida": false,
+
+    "pregunta_es": "¿Qué caracteriza al pensamiento ajeno según Ortega y Gasset?",
+
+    "respuestas_es": [
+
+      {
+        "correcta": false,
+        "texto": "Originalidad"
+      },
+      {
+        "correcta": true,
+        "texto": "Pasividad"
+      },
+      {
+        "correcta": false,
+        "texto": "Creatividad"
+      },
+      {
+        "correcta": false,
+        "texto": "Apropiación"
+      }
+    ],
+
+    "pregunta_en": "What characterizes foreign thinking according to Ortega y Gasset?",
+
+    "respuestas_en": [
+
+      {
+        "correcta": false,
+        "texto": "Originality"
+      },
+      {
+        "correcta": true,
+        "texto": "Passivity"
+      },
+      {
+        "correcta": false,
+        "texto": "Creativity"
+      },
+      {
+        "correcta": false,
+        "texto": "Appropriation"
+      }
+    ]
+  },
+
+  {
+    "respondida": false,
+
+    "pregunta_es": "¿Qué promueve la ciudadanía responsable?",
+
+    "respuestas_es": [
+
+      {
+        "correcta": false,
+        "texto": "Obediencia ciega"
+      },
+      {
+        "correcta": true,
+        "texto": "Participación activa"
+      },
+      {
+        "correcta": false,
+        "texto": "Desinterés"
+      },
+      {
+        "correcta": false,
+        "texto": "Corrupción"
+      }
+    ],
+
+    "pregunta_en": "What promotes responsible citizenship?",
+
+    "respuestas_en": [
+
+      {
+        "correcta": false,
+        "texto": "Blind obedience"
+      },
+      {
+        "correcta": true,
+        "texto": "Active participation"
+      },
+      {
+        "correcta": false,
+        "texto": "Disinterest"
+      },
+      {
+        "correcta": false,
+        "texto": "Corruption"
+      }
+    ]
+  },
+
+  {
+    "respondida": false,
+
+    "pregunta_es": "¿Cuál es un peligro de la apropiación pasiva según Ortega y Gasset?",
+
+    "respuestas_es": [
+
+      {
+        "correcta": false,
+        "texto": "Dogmatismo"
+      },
+      {
+        "correcta": true,
+        "texto": "Pensamiento ajeno"
+      },
+      {
+        "correcta": false,
+        "texto": "Ignorancia"
+      },
+      {
+        "correcta": false,
+        "texto": "Intolerancia"
+      }
+    ],
+
+    "pregunta_en": "What is a danger of passive appropriation according to Ortega y Gasset?",
+
+    "respuestas_en": [
+
+      {
+        "correcta": false,
+        "texto": "Dogmatism"
+      },
+      {
+        "correcta": true,
+        "texto": "Foreign thinking"
+      },
+      {
+        "correcta": false,
+        "texto": "Ignorance"
+      },
+      {
+        "correcta": false,
+        "texto": "Intolerance"
+      }
+    ]
+  },
+
+  {
+    "respondida": false,
+
+    "pregunta_es": "¿Qué promueve el pensamiento auténtico según Ortega y Gasset?",
+
+    "respuestas_es": [
+
+      {
+        "correcta": true,
+        "texto": "Apropiación activa"
+      },
+      {
+        "correcta": false,
+        "texto": "Aislamiento intelectual"
+      },
+      {
+        "correcta": false,
+        "texto": "Dogmatismo"
+      },
+      {
+        "correcta": false,
+        "texto": "Pensamiento ajeno"
+      }
+    ],
+
+    "pregunta_en": "What promotes authentic thinking according to Ortega y Gasset?",
+
+    "respuestas_en": [
+
+      {
+        "correcta": true,
+        "texto": "Active appropriation"
+      },
+      {
+        "correcta": false,
+        "texto": "Intellectual isolation"
+      },
+      {
+        "correcta": false,
+        "texto": "Dogmatism"
+      },
+      {
+        "correcta": false,
+        "texto": "Foreign thinking"
+      }
+    ]
+  },
+
+  {
+    "respondida": false,
+
+    "pregunta_es": "¿Qué caracteriza al hombre de apertura según Ortega y Gasset?",
+
+    "respuestas_es": [
+
+      {
+        "correcta": false,
+        "texto": "Intolerancia a ideas nuevas"
+      },
+      {
+        "correcta": true,
+        "texto": "Capacidad de apropiarse de ideas nuevas"
+      },
+      {
+        "correcta": false,
+        "texto": "Rechazo a influencias exteriores"
+      },
+      {
+        "correcta": false,
+        "texto": "Aislamiento intelectual"
+      }
+    ],
+
+    "pregunta_en": "What characterizes the open man according to Ortega y Gasset?",
+
+    "respuestas_en": [
+
+      {
+        "correcta": false,
+        "texto": "Intolerance to new ideas"
+      },
+      {
+        "correcta": true,
+        "texto": "Ability to appropriate new ideas"
+      },
+      {
+        "correcta": false,
+        "texto": "Rejection of outside influences"
+      },
+      {
+        "correcta": false,
+        "texto": "Intellectual isolation"
+      }
+    ]
+  }
 ]
