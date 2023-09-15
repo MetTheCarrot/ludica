@@ -38,3 +38,15 @@ img{
     background-color: #ff0000!important;
     color: white;
 }
+
+.primerLugar{
+    border: gold 5px solid;
+}
+
+.segundoLugar{
+    border: silver 5px solid;
+}
+
+.tercerLugar{
+    border: #cd7f32 5px solid;
+}

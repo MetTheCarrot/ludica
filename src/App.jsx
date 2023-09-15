@@ -1,8 +1,8 @@
 import {Container} from 'react-bootstrap';
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {groupList} from "./Data/Groups.js";
 import LoadingGame from "./Components/LoadingGame.jsx";
-import {game as initGame, pauseGame} from "./Data/Game.js";
+import {game as initGame} from "./Data/Game.js";
 import GameStatus from "./Components/Game/GameStatus.jsx";
 import {questions} from "./Data/Questions.js";
 
@@ -23,7 +23,7 @@ function App() {
     <Container className='text-center'>
       {
         game.start ?
-          <GameStatus game={game} groups={groups} refreshGame={refreshGame} preguntas={preguntas}/>
+          <GameStatus setGroups={setGroups} game={game} groups={groups} refreshGame={refreshGame} preguntas={preguntas}/>
           :
           <LoadingGame refreshGame={refreshGame} groups={groups} setGroups={setGroups} />
       }

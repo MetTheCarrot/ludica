@@ -2,6 +2,7 @@ import sillas from "../../assets/sillas.png";
 import {useEffect} from "react";
 import {endChoosingGroup, maxRounds, nextRound} from "../../Data/Game.js";
 import {Container} from "react-bootstrap";
+import confetti from 'canvas-confetti'
 
 export default function ChoosingGroup({ groups, game, refreshGame, refresh, setEvent }){
 
@@ -25,9 +26,16 @@ export default function ChoosingGroup({ groups, game, refreshGame, refresh, setE
     if(game.groups.length === 1){
       // Si solo hay un grupo, se elige ese grupo
       console.log("Solo hay un grupo, elegir ese grupo")
-      endChoosingGroup(game.groups[0].id);
-      setEvent(2)
-      refreshGame();
+      document.getElementById(game.groups[0].id).classList.remove('notChoose');
+      document.getElementById(game.groups[0].id).classList.add('Choose');
+
+      confetti();
+
+      setTimeout(() => {
+        endChoosingGroup(game.groups[0].id);
+        setEvent(2)
+        refreshGame();
+      }, 2000)
       return;
     }
     let grupoActual = 0;
@@ -72,10 +80,14 @@ export default function ChoosingGroup({ groups, game, refreshGame, refresh, setE
     console.log("Grupo aleatorio: " + grupoAleatorio)
     document.getElementById(grupoAleatorio).classList.remove('notChoose');
     document.getElementById(grupoAleatorio).classList.add('Choose');
-    endChoosingGroup(grupoAleatorio);
-    setEvent(2)
-    refreshGame();
-    refresh();
+
+    confetti();
+    setTimeout(() => {
+      endChoosingGroup(grupoAleatorio);
+      setEvent(2)
+      refreshGame();
+      refresh();
+    }, 2000)
   }
 
   function grupoYaEstaElegido(id){

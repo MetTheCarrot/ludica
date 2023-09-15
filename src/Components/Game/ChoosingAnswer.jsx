@@ -1,11 +1,11 @@
 import {Button, ButtonGroup, Container} from "react-bootstrap";
 import {getRandomQuest} from "../../Data/Questions.js";
 import {useState} from "react";
-import {addPoint, removePoint} from "../../Data/Groups.js";
+import {addPoint, removePoint, updateGroups} from "../../Data/Groups.js";
 import confetti from 'canvas-confetti'
 import {endChoosingQuestion} from "../../Data/Game.js";
 
-export default function ChoosingAnswer({currentGroup, quest, refresh, setEvent}){
+export default function ChoosingAnswer({currentGroup, quest, refresh, setEvent, setGroups}){
 
   const [pregunta, setPregunta] = useState(quest);
   const [showSpanishQuestion, setShowSpanishQuestion] = useState(false);
@@ -31,6 +31,7 @@ export default function ChoosingAnswer({currentGroup, quest, refresh, setEvent})
       respuestaCuadadrado.innerHTML = "¡Respuesta correcta! (+6 puntos)";
       respuestaCuadadrado.style.color = 'green';
       addPoint(currentGroup.id, 6);
+      setGroups(updateGroups());
       document.getElementById(currentGroup.id + "grupo").innerHTML = "Tienen " + currentGroup.points + " puntos";
       confetti().then(() => {
         console.log("Cambiando a escoger otro grupo")
@@ -79,6 +80,7 @@ export default function ChoosingAnswer({currentGroup, quest, refresh, setEvent})
   function mostrarPreguntaEnEspanol(){
     setShowSpanishQuestion(true);
     removePoint(currentGroup.id, 3);
+    setGroups(updateGroups());
     document.getElementById(currentGroup.id + "grupo").innerHTML = "Tienen " + currentGroup.points + " puntos";
     refresh();
   }
@@ -86,6 +88,7 @@ export default function ChoosingAnswer({currentGroup, quest, refresh, setEvent})
   function mostrarRespuestasEnEspanol(){
     setShowSpanishRespuestas(true);
     removePoint(currentGroup.id, 2);
+    setGroups(updateGroups());
     document.getElementById(currentGroup.id + "grupo").innerHTML = "Tienen " + currentGroup.points + " puntos";
     refresh();
   }
@@ -101,6 +104,7 @@ export default function ChoosingAnswer({currentGroup, quest, refresh, setEvent})
       eliminarDosRespuestas(true)
     }
     removePoint(currentGroup.id, 3);
+    setGroups(updateGroups());
     document.getElementById(currentGroup.id + "grupo").innerHTML = "Tienen " + currentGroup.points + " puntos";
     refresh();
   }
@@ -110,6 +114,7 @@ export default function ChoosingAnswer({currentGroup, quest, refresh, setEvent})
     if(byPassByChangingQuestion === false){
       console.log(`Eliminando dos respuestas del grupo ${currentGroup.id}`)
       removePoint(currentGroup.id, 2);
+      setGroups(updateGroups());
     }
     setRemoveTwoAnswers(true);
     // Obtener el indice de la respuesta correcta
@@ -133,7 +138,7 @@ export default function ChoosingAnswer({currentGroup, quest, refresh, setEvent})
     <section className='m-0 vh-100 row justify-content-center align-content-center'>
 
       <Container
-        className='col-auto p-4'
+        className='col-auto p-5'
         style={{
         border: 'dashed 5px black',
       }}>
@@ -227,7 +232,6 @@ export default function ChoosingAnswer({currentGroup, quest, refresh, setEvent})
               <h4 className="p-2 bg-white rounded m-1 cardQuestion"
                 id="1"
                   onClick={() => checkAnswer(1)}
-
               >
                 {
                   mostrarRespuestas(1)

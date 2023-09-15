@@ -25,12 +25,17 @@ function removePoint(targetGroupId, amount){
   localStorage.setItem('groups', JSON.stringify(groupList));
 }
 
+function updateGroups(){
+  return groupList;
+}
+
 function addPoint(targetGroupId, amount){
   groupList[targetGroupId - 1].points += amount;
   localStorage.setItem('groups', JSON.stringify(groupList));
 }
 
 export {
+  updateGroups,
   removePoint,
   addPoint,
   removeGroup,

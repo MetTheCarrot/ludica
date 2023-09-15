@@ -4,7 +4,7 @@ import ChoosingAnswer from "./ChoosingAnswer.jsx";
 import {getRandomQuest} from "../../Data/Questions.js";
 import ShowResults from "./ShowResults.jsx";
 
-export default function GameStatus({game, groups, refreshGame, preguntas}){
+export default function GameStatus({game, groups, refreshGame, preguntas, setGroups}){
 
   const [updateStatus, refreshStatus] = useState(false);
   const [event, setEvent] = useState(game.status.event);
@@ -22,6 +22,7 @@ export default function GameStatus({game, groups, refreshGame, preguntas}){
                                refresh={refresh}/>);
       case 2:
         return (<ChoosingAnswer
+          setGroups={setGroups}
           refresh={refresh}
           setEvent={setEvent}
           quest={getRandomQuest()}
