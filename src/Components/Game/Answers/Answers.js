@@ -139,7 +139,7 @@ export const listOfQuest = [
     texto: 'It means that man cannot change his world once he has shaped i'
   },
   {
-    correcta: false,
+    correcta: true,
     texto: 'It means that man needs to have a meaningful relationship with his environment to be considered truly human'
   }
 ],
@@ -158,7 +158,7 @@ export const listOfQuest = [
     texto: 'Significa que el hombre no puede cambiar su mundo una vez que lo ha configurado.'
   },
   {
-    correcta: false,
+    correcta: true,
     texto: 'Significa que el hombre necesita tener una relación significativa con su entorno  para ser considerado verdaderamente humano.'
   }
 ]

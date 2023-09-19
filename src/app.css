@@ -27,16 +27,19 @@ img{
     transform: scale(1.1);
     transition: 0.5s;
     background-color: gold!important;
+    user-select: none;
 }
 
 .correctAnswer{
     background-color: #00ff00!important;
     color: white;
+    user-select: none;
 }
 
 .incorrectAnswer{
     background-color: #ff0000!important;
     color: white;
+    user-select: none;
 }
 
 .primerLugar{
