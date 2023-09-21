@@ -100,39 +100,46 @@ export default function ChoosingGroup({ groups, game, refreshGame, refresh, setE
 
   function allGroups({groups}){
     return(
-      <Container>
-        <h1>
-          Eligiendo fila - Ronda {game.round}/{maxRounds}
-        </h1>
-        <div
-          className='d-flex justify-content-center p-3'
-        >
-          {
-            groups.map((group, index) => (
-              grupoYaEstaElegido(group.id) ?
-              <section key={index} className='p-3 alreadyChoose'>
-                <h5>
-                  Fila {group.id}
-                </h5>
-                <img src={sillas} alt='silla'/>
-                <h5>
-                  {group.points} puntos
-                </h5>
-              </section>
-                :
-              <section key={index} className='p-3 notChoose' id={group.id}>
-                <h5>
-                  Fila {group.id}
-                </h5>
-                <img src={sillas} alt='silla'/>
-                <h5>
-                  {group.points} puntos
-                </h5>
-              </section>
-            ))
-          }
-        </div>
-      </Container>
+
+      <section className='m-0 vh-100 row justify-content-center align-content-center'>
+
+        <Container
+          className='col-auto'
+          style={{
+          }}>
+          <h1>
+            Eligiendo fila - Ronda {game.round}/{maxRounds}
+          </h1>
+          <div
+            className='d-flex justify-content-center p-3'
+          >
+            {
+              groups.map((group, index) => (
+                grupoYaEstaElegido(group.id) ?
+                  <section key={index} className='p-3 alreadyChoose'>
+                    <h5>
+                      Fila {group.id}
+                    </h5>
+                    <img src={sillas} alt='silla'/>
+                    <h5>
+                      {group.points} puntos
+                    </h5>
+                  </section>
+                  :
+                  <section key={index} className='p-3 notChoose' id={group.id}>
+                    <h5>
+                      Fila {group.id}
+                    </h5>
+                    <img src={sillas} alt='silla'/>
+                    <h5>
+                      {group.points} puntos
+                    </h5>
+                  </section>
+              ))
+            }
+          </div>
+        </Container>
+      </section>
     )
   }
 

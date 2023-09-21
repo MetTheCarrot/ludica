@@ -64,34 +64,39 @@ export default function ShowResults({groups}){
 
 
   return(
-    <Container>
-      <h1>Resultados</h1>
-      <div
-        className='d-flex justify-content-center p-3'
-      >
-        {
-          groups.length > 0 ?
-            groups.map((group, index) => (
-              <section key={index} className={getClassName(group.id)}>
-                <h5>
-                  Fila {group.id}
-                </h5>
-                <img src={sillas} alt='silla'/>
-                <h5>
-                  {group.points} puntos
-                </h5>
+    <section className='m-0 vh-100 row justify-content-center align-content-center'>
+
+
+      <Container
+        className='col-auto'>
+        <h1>Resultados</h1>
+        <div
+          className='d-flex justify-content-center p-3'
+        >
+          {
+            groups.length > 0 ?
+              groups.map((group, index) => (
+                <section key={index} className={getClassName(group.id)}>
+                  <h5>
+                    Fila {group.id}
+                  </h5>
+                  <img src={sillas} alt='silla'/>
+                  <h5>
+                    {group.points} puntos
+                  </h5>
+                </section>
+              ))
+              :
+              <section className='p-3'>
+                <img src={nosillas} alt='silla' />
               </section>
-            ))
-            :
-            <section className='p-3'>
-              <img src={nosillas} alt='silla' />
-            </section>
-        }
-      </div>
-      <Button onClick={() => {
-        localStorage.clear()
-        window.location.reload()
-      }}>Volver a jugar</Button>
-    </Container>
+          }
+        </div>
+        <Button onClick={() => {
+          localStorage.clear()
+          window.location.reload()
+        }}>Volver a jugar</Button>
+      </Container>
+    </section>
   )
 }

@@ -21,37 +21,45 @@ export default function LoadingGame({groups, setGroups, refreshGame}){
   }
 
   return(
-    <Container className='text-center'>
+    <section className='m-0 vh-100 row justify-content-center align-content-center'>
+      <Container
+        className='col-auto'
+        style={{
+        }}>
 
-      <ShowGroups groups={groups} />
+        <h3>
+          Iniciando el juego...
+        </h3>
 
-      <section
-        className='d-flex justify-content-center'
-      >
+        <ShowGroups groups={groups} />
 
-        <ButtonGroup
-          className='shadow border '
+        <section
+          className='d-flex justify-content-center'
         >
-          <Button variant="primary"
-                  onClick={addGroup}
-          >
-            Añadir nuevo grupo
-          </Button>
 
-          <Button variant="danger"
-                  onClick={initGame}
+          <ButtonGroup
+            className='shadow border '
           >
-            Iniciar juego
-          </Button>
+            <Button variant="primary"
+                    onClick={addGroup}
+            >
+              Añadir nuevo grupo
+            </Button>
 
-          <Button variant="warning"
-                  onClick={deleteGroup}
-          >
-            Eliminar ultimo grupo
-          </Button>
-        </ButtonGroup>
-      </section>
+            <Button variant="danger"
+                    onClick={initGame}
+            >
+              Iniciar juego
+            </Button>
 
-    </Container>
+            <Button variant="warning"
+                    onClick={deleteGroup}
+            >
+              Eliminar ultimo grupo
+            </Button>
+          </ButtonGroup>
+        </section>
+      </Container>
+    </section>
   )
 }
